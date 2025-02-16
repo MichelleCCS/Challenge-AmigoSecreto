@@ -34,3 +34,15 @@ function limpiarCaja () {
     document.querySelector("#amigo").value = "";
 }
 
+function sortearAmigo() {
+    if (nombreAmigos.length === 0) { // Comprueba que el array nombreAmigos no está vacío.
+        alert("Error, no se puede sortear una lista vacía");
+    } else {
+        let numeroAzar = Math.floor(Math.random() * nombreAmigos.length);
+        let amigoGanador = nombreAmigos[numeroAzar];
+        
+        let resultadoElemento = document.getElementById("resultado");
+        resultadoElemento.innerHTML = ""; // Limpia el contenido anterior
+        resultadoElemento.innerHTML = amigoGanador; // Asigna el nombre del amigo ganador
+    }
+}
